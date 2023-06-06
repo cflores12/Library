@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <title>Library</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>Library</li>
+            <li>Login</li>
+          </ul>
+    </nav>
+    <main>
+        <button class="open-button" onclick="openForm()">+ Add Book</button>
+        <div class="form-popup" id="myForm">
+            <form onsubmit="event.preventDefault();" class="form-container">
+              <label for="title"><b>Title</b></label>
+              <input type="text" placeholder="Enter Title" name="title" id="title" required>
+          
+              <label for="author"><b>Author</b></label>
+              <input type="text" placeholder="Enter Author" name="author" id="author" required>
+    
+              <label for="pages"><b>Pages</b></label>
+              <input type="number" placeholder="" name="pages" id="pages" required>
+              </br></br>
+              <label for="read"><b>Did you Read this Book?</b></label>
+              <input type="checkbox" id="read" >
+              </br></br>
+          
+              <button type="submit" class="btn" onclick="displayBooksInLibrary()">Submit</button>
+              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+        <div id="container">
+        </div>
+    </main>
+</body>
+</html>
