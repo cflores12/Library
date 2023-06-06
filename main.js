@@ -33,6 +33,7 @@ function displayBooksInLibrary()
   paraAuthor.textContent = myLibrary[bookIndex].author;
   paraPages.textContent = myLibrary[bookIndex].pages;
 
+  div.setAttribute("id", t);
   buttonRemove.dataset.id = bookIndex;
   buttonRemove.textContent = "Remove";
   buttonRemove.addEventListener('click', removeBook);
@@ -56,27 +57,20 @@ function removeBook(e)
   let index = e.target.dataset.id;
   let bookTitle = myLibrary[index].title;
   myLibrary = myLibrary.filter( book => book.title != bookTitle );
-  resetGridForBooks();
+  removeElement(bookTitle);
 }
 
 function toggleReadStatus(e) 
 {
   let index = e.target.dataset.id;
   let bookReadStatus = myLibrary[index].isRead;
-
-  if(bookReadStatus) {
-    myLibrary[index].isRead = false;
-  } 
-  else
-  {
-    myLibrary[index].isRead = true;
-  }
-
+  myLibrary[index].isRead = !bookReadStatus;
 }
 
-function resetGridForBooks()
+function removeElement(title)
 {
-
+  var el = document.getElementById(title);
+  el.remove();
 }
 
 function openForm() {
