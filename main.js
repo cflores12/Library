@@ -33,7 +33,6 @@ function displayBooksInLibrary()
   paraAuthor.textContent = myLibrary[bookIndex].author;
   paraPages.textContent = myLibrary[bookIndex].pages;
 
-  div.setAttribute("id", t);
   buttonRemove.dataset.id = bookIndex;
   buttonRemove.textContent = "Remove";
   buttonRemove.addEventListener('click', removeBook);
@@ -74,7 +73,7 @@ function removeElement(title)
 }
 
 function openForm() {
-  document.getElementById("myForm").style.display = "block";
+  document.getElementById("myForm").style.display = "inline-block";
 }
 
 function closeForm() {
