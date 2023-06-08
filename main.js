@@ -26,6 +26,7 @@ function displayBooksInLibrary()
   const paraAuthor = document.createElement('p');
   const paraPages = document.createElement('p');
 
+  div.classList.add('book-card');
   const buttonRemove = document.createElement('button');
   const buttonRead = document.createElement('button');
 
